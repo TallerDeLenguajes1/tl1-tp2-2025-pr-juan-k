@@ -10,7 +10,6 @@ int main(){
         printf("%f", vt[i]);
     }
 
-
     return 0;
 }
 
