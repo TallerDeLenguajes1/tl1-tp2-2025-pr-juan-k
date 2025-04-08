@@ -17,11 +17,12 @@ char tipos[6][10] = {"Intel", "AMD", "Celeron", "Athlon", "Core", "Pentium"};
 
 
 
-
-
-int generarAleatorio(int min, int max);
-void mostrarMasVieja(struct compu pcs[], int cantidad);
 void mostrarMasVeloz(struct compu pcs[], int cantidad);
+void mostrarMasVieja(struct compu pcs[], int cantidad);
+void listarPCs(struct compu pcs[], int cantidad);
+int generarAleatorio(int min, int max);
+
+
 
 int main() {
    
@@ -31,7 +32,25 @@ int main() {
     struct compu pcs[N];
 
   
-    
+    for (int i = 0; i < N; i++) {
+        pcs[i].velocidad = generarAleatorio(1, 3); 
+        pcs[i].anio = generarAleatorio(2015, 2024); 
+        pcs[i].cantidad_nucleos = generarAleatorio(1, 8);
+
+        
+        pcs[i].tipo_cpu = tipos[generarAleatorio(0, 5)];
+    }
+
+
+    printf("Listado de PCs generadas:\n");
+    listarPCs(pcs, N);
+
+ 
+    mostrarMasVieja(pcs, N);
+
+  
+    mostrarMasVeloz(pcs, N);
+
     return 0;
 }
 void mostrarMasVeloz(struct compu pcs[], int cantidad) {
@@ -60,7 +79,7 @@ void mostrarMasVieja(struct compu pcs[], int cantidad) {
 
     printf("La PC más vieja es:\n");
     printf("  Velocidad: %d GHz\n", pcs[indice_vieja].velocidad);
-    printf("  Año de fabricacion: %d\n", pcs[indice_vieja].anio);
+    printf("  Anio de fabricacion: %d\n", pcs[indice_vieja].anio);
     printf("  Cantidad de nucleos: %d\n", pcs[indice_vieja].cantidad_nucleos);
     printf("  Tipo de CPU: %s\n", pcs[indice_vieja].tipo_cpu);
     printf("\n");
@@ -69,7 +88,7 @@ void listarPCs(struct compu pcs[], int cantidad) {
     for (int i = 0; i < cantidad; i++) {
         printf("PC %d:\n", i + 1);
         printf("  Velocidad: %d GHz\n", pcs[i].velocidad);
-        printf("  Año de fabricacion: %d\n", pcs[i].anio);
+        printf("  Anio de fabricacion: %d\n", pcs[i].anio);
         printf("  Cantidad de nucleos: %d\n", pcs[i].cantidad_nucleos);
         printf("  Tipo de CPU: %s\n", pcs[i].tipo_cpu);
         printf("\n");
