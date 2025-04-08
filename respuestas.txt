@@ -1,2 +1,9 @@
 ## RESPONDEMOS A LAS PREGUNTAS
+¿Puede ver el archivo tp2_1_2.c? ¿Por qué?
+
+no es posible verlo ya que estoy parado en la rama main 
+y solo puedo ver los archivos existentes en la rama que estoy parado
+
+En VSCode vuelva al “Source Control” ¿Qué diferencias nota?
+
 
