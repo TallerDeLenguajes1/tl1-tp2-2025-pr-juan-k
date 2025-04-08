@@ -6,4 +6,5 @@ y solo puedo ver los archivos existentes en la rama que estoy parado
 
 En VSCode vuelva al “Source Control” ¿Qué diferencias nota?
 
-
+veo una especie de registro con un pequeño dibujo grafico en el que 
+muestra cada avance que se va trabajando en el proyecto
